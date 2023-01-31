@@ -1,0 +1,41 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Cadastros' /}
+
+<p class="lead mt-4">
+	Cadastros realizados pelo grupo ${grupo}
+</p>
+
+#{list items:modelos, as:'modelo'}
+	<div class="row">
+		<div class="col-10">
+			<ul>
+				#{if modelo?.grupo}
+					<li><b>Grupo</b>: ${modelo.grupo}</li>
+				#{/if}
+				#{if modelo?.nome}
+					<li><b>Nome</b>: ${modelo.nome}</li>
+				#{/if}
+				#{if modelo?.descricao}
+					<li><b>Descrição</b>: ${modelo.descricao}</li>
+				#{/if}
+				#{if modelo?.numero}
+					<li><b>Número</b>: ${modelo.numero}</li>
+				#{/if}
+				#{if modelo?.opcoes}
+					<li><b>Opções:</b>
+						#{list items:modelo?.opcoes, as:'op'}
+							${op},
+						#{/list}
+					</li>
+				#{/if}
+				#{if modelo?.data}
+					<li><b>Data</b>: ${modelo.data.format('dd/MM/yyyy')}</li>
+				#{/if}
+			</ul>
+		</div>
+		<div class="col-2">
+			<a class="btn btn-danger mt-3" href="@{Modelos.remover(id: modelo.id, grupo: modelo.grupo)}">Remover</a>
+		</div>
+	</div>
+	<hr />
+#{/list}

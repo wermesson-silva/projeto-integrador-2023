@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Cadastros' /}
+
+<p class="lead mt-4">
+	Modelos cadastrados pelos grupos
+</p>
+
+
+#{list items:modelos, as:'modelo'}
+	<ul>
+		#{if modelo?.grupo}
+			<li><b>Grupo</b>: ${modelo.grupo}</li>
+		#{/if}
+		#{if modelo?.nome}
+			<li><b>Nome</b>: ${modelo.nome}</li>
+		#{/if}
+		#{if modelo?.descricao}
+			<li><b>Descrição</b>: ${modelo.descricao}</li>
+		#{/if}
+		#{if modelo?.numero}
+			<li><b>Número</b>: ${modelo.numero}</li>
+		#{/if}
+		#{if modelo?.opcoes}
+			<li><b>Opções:</b>
+				#{list items:modelo?.opcoes, as:'op'}
+					${op},
+				#{/list}
+			</li>
+		#{/if}
+		#{if modelo?.data}
+			<li><b>Data</b>: ${modelo.data.format('dd/MM/yyyy')}</li>
+		#{/if}
+	</ul>
+	<hr />
+#{/list}
