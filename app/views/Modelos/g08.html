@@ -1,0 +1,109 @@
+#{extends 'main.html' /}
+#{set title:'Formulário de Cadastro' /}
+
+<p class="lead mt-4">
+	Formulário do grupo g08
+</p>
+
+
+<p>
+	<small>Desenvolva aqui o seu formulário de cadastro.</small>
+</p>
+
+<form action="http://[ip-fornecido-pelo-professor]:9000/salvar">
+	<input type="hidden" name="grupo" value=${grupo} />
+	
+	<table style="border: 1px solid black; background-color: rgb(151, 152, 153);" >
+		<tr>
+			<td>
+				<label for="">Nome:</label>
+				
+			</td>
+			
+			<td>
+				<input type="text" name="nome" required >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="">Data de Nascimento:</label>
+			</td>
+			<td>
+				
+				<input type="date" name="" id="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="">Matricula</label>
+			</td>
+			<td>
+				<input type="text">
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label for="">Periodo:</label>
+			</td>
+			<td>
+				<input type="number" name="" id="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="">Curso:</label>
+			</td>
+			<td>
+				<select name="" id="">
+				<option value="1">Selecione</option>
+				<option value="2">informatica</option>
+				<option value="3">Eletrotecnica</option>
+				<option value="4">Administração</option>
+				</select>
+			</td>
+			
+		</tr>
+		<tr >
+			<td >
+				<label for="">Materias favoritas:</label>
+			</td>
+			
+		</tr>
+		<tr>
+			<td >
+				<input type="checkbox" name="" id="">Português
+				
+
+			</td>
+			<td>
+				<input type="checkbox" name="" id="">Matemática
+				
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="" id="">Historia
+				
+				
+			</td>
+			<td>
+				<input type="checkbox" name="" id="">geografia
+				
+			</td>
+		</tr>
+		<tr><td>
+			<input type="checkbox" name="" id="">Sociologia
+			
+		</td>
+		<td>
+			<input type="checkbox" name="" id="">Biologia
+			
+			
+		</td>
+	</tr>
+		
+		
+	</table>
+</form>
